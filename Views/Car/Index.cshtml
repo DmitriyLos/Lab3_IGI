@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Car";
+}
+<div class="row">
+    <div class="col-md-5">
+        <form method="post" action="car">
+            <div>
+                <label>Форма для заполнения</label>
+            </div>
+            <div>
+                <label>
+                    Модель
+                    <input type="text" name="model" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Номер
+                    <input type="text" name="stateNumber" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Цвет
+                    <select id="Select1" name="colour">
+                        <option>Чёрный</option>
+                        <option>Белый</option>
+                        <option>Красный</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Мощность
+                    <input type="text" name="power" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="submit" value="Отправить" />
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5">
+        Список автомобилей
+        <table class="views">
+            @{
+                for (int i = 0; i < 4; i++)
+                {
+                    <tr>
+                        <td>Автомобиль @i</td>
+                        <td>Цвет @i</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
